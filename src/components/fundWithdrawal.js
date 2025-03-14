@@ -39,7 +39,7 @@ export default function FundWithdrawalForm() {
   }
 
   return (
-    <div className="bg-gray-50 max-w-[70vw] p-6 rounded-lg w-screen mx-20 mx-auto">
+    <div className="bg-gray-50 max-w-[77vw] p-6 rounded-lg w-screen mx-36 mx-auto">
      
       
 

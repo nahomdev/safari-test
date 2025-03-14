@@ -5,6 +5,7 @@ import FundWithdrawalForm from '../components/fundWithdrawal';
 function DashboardPage() {
   const [currentStep, setCurrentStep] = useState(5);
   const [selectedBank, setSelectedBank] = useState(null);
+  const [isChecked, setIsChecked] = useState(false);
 
   const steps = [
     { id: 1, name: 'Check Merchant' },
@@ -94,9 +95,12 @@ function DashboardPage() {
           </div>
           
           <div className='space-x-3 bg-white px-3 py-2 border border-1'>
-            <input type='checkbox'/>
+            <input 
+              type='checkbox' 
+              checked={isChecked} 
+              onChange={() => setIsChecked(prev => !prev)}
+            />
             <span>Back</span>
-            
           </div>
 
           <div className="flex justify-end mt-8 space-x-3">
@@ -126,9 +130,11 @@ function DashboardPage() {
         </div>
       </div>
       {/* form section */}
-      <div>
-      <FundWithdrawalForm />
-      </div>
+      {isChecked && (
+        <div>
+          <FundWithdrawalForm />
+        </div>
+      )}
     </div>
   );
 }
